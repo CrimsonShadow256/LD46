@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c7f758407003648bb61eede082845c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallCheckRayLength: 1
+  wallCheckRayLength: 1.5
   maxWalkSpeed: 2
   groundCheckRayLength: 1
   jumpVelocity: 7

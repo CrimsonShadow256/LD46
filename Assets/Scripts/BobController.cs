@@ -81,6 +81,10 @@ public class BobController : MonoBehaviour {
 				// Add Jump Velocity
 				Vector3 newVelocity = myRigidBody.velocity;
 				newVelocity.y = jumpVelocity;
+				if (lastState == BobStates.WALK_FORWARD)
+					newVelocity.z = maxWalkSpeed;
+				else
+					newVelocity.z = -maxWalkSpeed;
 				myRigidBody.velocity = newVelocity;
 
 				// Set Jumping Variables
