@@ -146,10 +146,12 @@ public class BobController : MonoBehaviour {
 	}
 
 	public void KillBob(){
-		myAnim.SetTrigger ("killBob");
-		ChangeState (BobStates.DIEING);
-		Invoke ("Respawn", 2.0f);
+		if (state != BobStates.DYING) {
+			myAnim.SetTrigger ("killBob");
+			ChangeState (BobStates.DYING);
+			Invoke ("Respawn", 2.0f);
+		}
 	}
 
-	enum BobStates {IDLE, WALK_FORWARD, WALK_BACKWARDS, JUMPING, DIEING}
+	enum BobStates {IDLE, WALK_FORWARD, WALK_BACKWARDS, JUMPING, DYING}
 }
