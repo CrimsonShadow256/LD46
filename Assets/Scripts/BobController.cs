@@ -18,6 +18,8 @@ public class BobController : MonoBehaviour {
 	private Rigidbody myRigidBody;
 	private Animator  myAnim;
 
+	private float walkRayHightFromGround = 0.25f;
+
 	// Jumping variables
 	private bool isJumping = false;
 	private float jumpStartY;
@@ -53,11 +55,11 @@ public class BobController : MonoBehaviour {
 		bobModel.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
 
 		RaycastHit hit;
-		if (Physics.Raycast (transform.position + Vector3.up, transform.TransformDirection (Vector3.forward), out hit, wallCheckRayLength)) {
-			Debug.DrawRay (transform.position + Vector3.up, transform.TransformDirection (Vector3.forward) * hit.distance, Color.red);
+		if (Physics.Raycast (transform.position + Vector3.up * walkRayHightFromGround, transform.TransformDirection (Vector3.forward), out hit, wallCheckRayLength)) {
+			Debug.DrawRay (transform.position + Vector3.up * walkRayHightFromGround, transform.TransformDirection (Vector3.forward) * hit.distance, Color.red);
 			ChangeState (BobStates.JUMPING);
 		} else {
-			Debug.DrawRay(transform.position+Vector3.up, transform.TransformDirection(Vector3.forward) * wallCheckRayLength, Color.green);
+			Debug.DrawRay(transform.position+Vector3.up * walkRayHightFromGround, transform.TransformDirection(Vector3.forward) * wallCheckRayLength, Color.green);
 		}
 	}
 
@@ -70,12 +72,12 @@ public class BobController : MonoBehaviour {
 		bobModel.transform.localScale = new Vector3 (1.0f, 1.0f, -1.0f);
 
 		RaycastHit hit;
-		if (Physics.Raycast(transform.position+Vector3.up, transform.TransformDirection(Vector3.back), out hit, wallCheckRayLength))
+		if (Physics.Raycast(transform.position+Vector3.up * walkRayHightFromGround, transform.TransformDirection(Vector3.back), out hit, wallCheckRayLength))
 		{
-			Debug.DrawRay(transform.position+Vector3.up, transform.TransformDirection(Vector3.back) * hit.distance, Color.red);
+			Debug.DrawRay(transform.position+Vector3.up * walkRayHightFromGround, transform.TransformDirection(Vector3.back) * hit.distance, Color.red);
 			ChangeState (BobStates.JUMPING);
 		}else {
-			Debug.DrawRay(transform.position+Vector3.up, transform.TransformDirection(Vector3.back) * wallCheckRayLength, Color.green);
+			Debug.DrawRay(transform.position+Vector3.up * walkRayHightFromGround, transform.TransformDirection(Vector3.back) * wallCheckRayLength, Color.green);
 		}
 	}
 
