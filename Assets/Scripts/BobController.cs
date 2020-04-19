@@ -11,6 +11,8 @@ public class BobController : MonoBehaviour {
 	public float jumpVelocity;
 	public float jumpSuccessCheckDeltaY;
 
+	public float spawnHightAboveGround;
+
 	public GameObject bobModel;
 
 	private BobStates state;
@@ -151,6 +153,12 @@ public class BobController : MonoBehaviour {
 			ChangeState (BobStates.DYING);
 			Invoke ("Respawn", 2.0f);
 		}
+	}
+
+	public void SetSpawnPoint(Vector3 newSpawnPoint){
+		newSpawnPoint.y += spawnHightAboveGround;
+		newSpawnPoint.x = 0.0f;
+		spawnPoint = newSpawnPoint;
 	}
 
 	enum BobStates {IDLE, WALK_FORWARD, WALK_BACKWARDS, JUMPING, DYING}

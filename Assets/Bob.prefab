@@ -820,6 +820,7 @@ MonoBehaviour:
   groundCheckRayLength: 1.1
   jumpVelocity: 7
   jumpSuccessCheckDeltaY: 0.1
+  spawnHightAboveGround: 6
   bobModel: {fileID: 1948723565177796}
 --- !u!114 &114225231529784716
 MonoBehaviour:

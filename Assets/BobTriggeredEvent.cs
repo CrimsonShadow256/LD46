@@ -8,6 +8,10 @@ public class BobTriggeredEvent : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.CompareTag ("Bob")) {
+			BobController bob = other.GetComponentInParent<BobController> ();
+			if (bob == null)
+				return;
+			
 			switch(type){
 			case BobTriggeredEventType.UNITY_EVENT:
 				if (eventToTrigger != null) {
@@ -15,10 +19,10 @@ public class BobTriggeredEvent : MonoBehaviour {
 				}
 				break;
 			case BobTriggeredEventType.KILL_BOB:
-				BobController bob = other.GetComponentInParent<BobController> ();
 				bob.KillBob ();
 				break;
 			case BobTriggeredEventType.RESPAWN_POINT:
+				bob.SetSpawnPoint (transform.position);
 				break;
 			}
 		}
