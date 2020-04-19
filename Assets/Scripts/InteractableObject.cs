@@ -18,20 +18,23 @@ public class InteractableObject : MonoBehaviour
 		//Fetch the mesh renderer component from the GameObject
 		m_Renderer = GetComponentInChildren<MeshRenderer>();
 		//Fetch the original color of the GameObject
-		m_OriginalColor = m_Renderer.material.color;
+		if(m_Renderer)
+			m_OriginalColor = m_Renderer.material.color;
 	}
 
 	void OnMouseOver()
 	{
 		// Change the color of the GameObject to red when the mouse is over GameObject
-		m_Renderer.material.color = m_MouseOverColor;
+		if(m_Renderer)
+			m_Renderer.material.color = m_MouseOverColor;
 		isSelected = true;
 	}
 
 	void OnMouseExit()
 	{
 		// Reset the color of the GameObject back to normal
-		m_Renderer.material.color = m_OriginalColor;
+		if(m_Renderer)
+			m_Renderer.material.color = m_OriginalColor;
 		isSelected = false;
 	}
 }
