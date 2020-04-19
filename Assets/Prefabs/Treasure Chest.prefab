@@ -51,7 +51,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4786722697412196}
   - component: {fileID: 65023113421342482}
-  m_Layer: 0
+  - component: {fileID: 114189573907654832}
+  m_Layer: 2
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,13 +95,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1386331921928682}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.258819, z: 0, w: 0.9659259}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4612059660656530}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
 --- !u!4 &4612059660656530
 Transform:
   m_ObjectHideFlags: 1
@@ -108,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423478120789536}
   m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 14.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4080987235489214}
@@ -123,13 +124,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1695718443093972}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.258819, z: 0, w: 0.9659259}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4612059660656530}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
 --- !u!23 &23882848495188500
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -183,7 +184,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 2.3127599, z: 3}
+  m_Size: {x: 3, y: 2.3127599, z: 4}
   m_Center: {x: 0, y: 1.3436201, z: 0}
 --- !u!65 &65936929708760282
 BoxCollider:
@@ -197,3 +198,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.7885408, z: 2}
   m_Center: {x: 0, y: 0.8942704, z: 0}
+--- !u!114 &114189573907654832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1695718443093972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4861eb85138f66d4f86104899b9c5ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  eventToTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

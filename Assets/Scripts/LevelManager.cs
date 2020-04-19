@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 
 	[HideInInspector]
-	public LevelManager singelton;
+	public static LevelManager singelton;
 
 	private int sceneToLoad;
 

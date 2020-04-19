@@ -155,11 +155,22 @@ public class BobController : MonoBehaviour {
 		}
 	}
 
+	public void Victory(){
+		myRigidBody.velocity = Vector3.zero;
+		bobModel.transform.localScale = Vector3.one;
+		ChangeState (BobStates.VICTORY);
+
+		if (Random.Range (0, 2) == 0)
+			myAnim.SetTrigger ("victory1");
+		else
+			myAnim.SetTrigger ("victory2");
+	}
+
 	public void SetSpawnPoint(Vector3 newSpawnPoint){
 		newSpawnPoint.y += spawnHightAboveGround;
 		newSpawnPoint.x = 0.0f;
 		spawnPoint = newSpawnPoint;
 	}
 
-	enum BobStates {IDLE, WALK_FORWARD, WALK_BACKWARDS, JUMPING, DYING}
+	enum BobStates {IDLE, WALK_FORWARD, WALK_BACKWARDS, JUMPING, DYING, VICTORY}
 }

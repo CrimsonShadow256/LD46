@@ -14,9 +14,6 @@ public class BobTriggeredEvent : MonoBehaviour {
 			
 			switch(type){
 			case BobTriggeredEventType.UNITY_EVENT:
-				if (eventToTrigger != null) {
-					eventToTrigger.Invoke ();
-				}
 				break;
 			case BobTriggeredEventType.KILL_BOB:
 				bob.KillBob ();
@@ -24,10 +21,18 @@ public class BobTriggeredEvent : MonoBehaviour {
 			case BobTriggeredEventType.RESPAWN_POINT:
 				bob.SetSpawnPoint (transform.position);
 				break;
+			case BobTriggeredEventType.VICTORY:
+				bob.Victory ();
+				LevelManager.singelton.LoadNextLevel ();
+				break;
+			}
+
+			if (eventToTrigger != null) {
+				eventToTrigger.Invoke ();
 			}
 		}
 	}
 
 
-	public enum BobTriggeredEventType {KILL_BOB, RESPAWN_POINT, UNITY_EVENT}
+	public enum BobTriggeredEventType {UNITY_EVENT, KILL_BOB, RESPAWN_POINT, VICTORY}
 }

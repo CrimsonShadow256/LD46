@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4861eb85138f66d4f86104899b9c5ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
   eventToTrigger:
     m_PersistentCalls:
       m_Calls: []

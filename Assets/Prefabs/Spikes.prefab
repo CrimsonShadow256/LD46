@@ -208,9 +208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4861eb85138f66d4f86104899b9c5ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   eventToTrigger:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  killBob: 1
