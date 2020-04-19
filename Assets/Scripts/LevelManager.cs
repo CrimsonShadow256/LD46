@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
 	public static LevelManager singelton;
 
 	private int sceneToLoad;
+	private string sceneToLoadString;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,8 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void LoadLevelByName(string nextLevel){
-		sceneToLoad = SceneManager.GetSceneByName (nextLevel).buildIndex;
+		sceneToLoad = -1;
+		sceneToLoadString = nextLevel;
 		StartSceneTransition ();
 	}
 
@@ -31,6 +33,9 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	private void LoadScene(){
-		SceneManager.LoadScene (sceneToLoad);
+		if (sceneToLoad >= 0)
+			SceneManager.LoadScene (sceneToLoad);
+		else
+			SceneManager.LoadScene (sceneToLoadString);
 	}
 }
