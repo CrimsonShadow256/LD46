@@ -129,15 +129,15 @@ public class BobController : MonoBehaviour {
 		ChangeState(BobStates.IDLE);
 		myAnim.SetBool ("isWalking", false);
 		myAnim.SetTrigger ("reSpawn");
+
 		transform.position = spawnPoint;
+		myRigidBody.velocity = Vector3.zero;
+		bobModel.transform.localScale = Vector3.one;
 	}
 
 	void ChangeState(BobStates newState){
 		lastState = state;
 		state = newState;
-
-		myRigidBody.velocity = Vector3.zero;
-		bobModel.transform.localScale = Vector3.one;
 	}
 
 	public void Clicked(){
