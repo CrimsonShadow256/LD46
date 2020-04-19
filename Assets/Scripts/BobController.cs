@@ -18,6 +18,8 @@ public class BobController : MonoBehaviour {
 	private Rigidbody myRigidBody;
 	private Animator  myAnim;
 
+	private Vector3 spawnPoint;
+
 	private float walkRayHightFromGround = 0.25f;
 
 	// Jumping variables
@@ -29,6 +31,8 @@ public class BobController : MonoBehaviour {
 		myRigidBody = GetComponent<Rigidbody> ();
 		myAnim = GetComponent<Animator> ();
 		state = BobStates.IDLE;
+
+		spawnPoint = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -119,9 +123,19 @@ public class BobController : MonoBehaviour {
 		}
 	}
 
+	private void Respawn(){
+		ChangeState(BobStates.IDLE);
+		myAnim.SetBool ("isWalking", false);
+		myAnim.SetTrigger ("reSpawn");
+		transform.position = spawnPoint;
+	}
+
 	void ChangeState(BobStates newState){
 		lastState = state;
 		state = newState;
+
+		myRigidBody.velocity = Vector3.zero;
+		bobModel.transform.localScale = Vector3.one;
 	}
 
 	public void Clicked(){
@@ -129,6 +143,12 @@ public class BobController : MonoBehaviour {
 			myAnim.SetBool ("isWalking", true);
 			ChangeState (BobStates.WALK_FORWARD);
 		}
+	}
+
+	public void KillBob(){
+		myAnim.SetTrigger ("killBob");
+		ChangeState (BobStates.DIEING);
+		Invoke ("Respawn", 2.0f);
 	}
 
 	enum BobStates {IDLE, WALK_FORWARD, WALK_BACKWARDS, JUMPING, DIEING}
