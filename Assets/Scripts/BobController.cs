@@ -11,9 +11,12 @@ public class BobController : MonoBehaviour {
 	public float jumpVelocity;
 	public float jumpSuccessCheckDeltaY;
 
+	public GameObject bobModel;
+
 	private BobStates state;
 	private BobStates lastState;
 	private Rigidbody myRigidBody;
+	private Animator  myAnim;
 
 	// Jumping variables
 	private bool isJumping = false;
@@ -22,6 +25,7 @@ public class BobController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myRigidBody = GetComponent<Rigidbody> ();
+		myAnim = GetComponent<Animator> ();
 		state = BobStates.IDLE;
 	}
 	
@@ -46,6 +50,8 @@ public class BobController : MonoBehaviour {
 			newVelocity.z = maxWalkSpeed;
 		myRigidBody.velocity = newVelocity;
 
+		bobModel.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position + Vector3.up, transform.TransformDirection (Vector3.forward), out hit, wallCheckRayLength)) {
 			Debug.DrawRay (transform.position + Vector3.up, transform.TransformDirection (Vector3.forward) * hit.distance, Color.red);
@@ -60,6 +66,8 @@ public class BobController : MonoBehaviour {
 		if (newVelocity.z > -maxWalkSpeed)
 			newVelocity.z = -maxWalkSpeed;
 		myRigidBody.velocity = newVelocity;
+
+		bobModel.transform.localScale = new Vector3 (1.0f, 1.0f, -1.0f);
 
 		RaycastHit hit;
 		if (Physics.Raycast(transform.position+Vector3.up, transform.TransformDirection(Vector3.back), out hit, wallCheckRayLength))
@@ -115,8 +123,10 @@ public class BobController : MonoBehaviour {
 	}
 
 	public void Clicked(){
-		if (state == BobStates.IDLE)
-			ChangeState(BobStates.WALK_FORWARD);
+		if (state == BobStates.IDLE) {
+			myAnim.SetBool ("isWalking", true);
+			ChangeState (BobStates.WALK_FORWARD);
+		}
 	}
 
 	enum BobStates {IDLE, WALK_FORWARD, WALK_BACKWARDS, JUMPING, DIEING}
