@@ -6,20 +6,24 @@ public class LevelManager : MonoBehaviour {
 	[HideInInspector]
 	public static LevelManager singelton;
 
+	private Animator myAnim;
+	private float transitionDuration = 1.1f;
 	private int sceneToLoad;
 	private string sceneToLoadString;
 
 	// Use this for initialization
 	void Start () {
-		if (singelton == null)
+		if (singelton == null) {
+			myAnim = GetComponent<Animator> ();
 			singelton = this;
+		}
 		else
 			Destroy (this);
 	}
 	
 	public void LoadNextLevel(){
 		sceneToLoad = SceneManager.GetActiveScene ().buildIndex + 1;
-		StartSceneTransition ();
+		Invoke ("StartSceneTransition", 3.5f);
 	}
 
 	public void LoadLevelByName(string nextLevel){
@@ -29,7 +33,8 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	private void StartSceneTransition(){
-		Invoke ("LoadScene", 2.0f);
+		myAnim.SetTrigger ("StartTransition");
+		Invoke ("LoadScene", transitionDuration);
 	}
 
 	private void LoadScene(){
