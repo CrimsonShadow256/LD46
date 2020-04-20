@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial Level 3.unity
     guid: 7d0f0690d212cb74999c2a1400b15247
   - enabled: 1
+    path: Assets/Scenes/Tutorial Complete.unity
+    guid: 71c34662e0ae7b54698a9c2bf9672ebe
+  - enabled: 1
     path: Assets/Scenes/Emily Level 1.unity
     guid: 5eed830d8b429634182a22adf65e90b5
   - enabled: 0
