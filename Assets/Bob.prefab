@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 114225231529784716}
   - component: {fileID: 114910229284810838}
   - component: {fileID: 95492457469154394}
+  - component: {fileID: 114878907036495162}
   m_Layer: 0
   m_Name: Bob
   m_TagString: Bob
@@ -822,6 +823,7 @@ MonoBehaviour:
   jumpSuccessCheckDeltaY: 0.1
   spawnHightAboveGround: 6
   bobModel: {fileID: 1948723565177796}
+  jumpSound: {fileID: 8300000, guid: 1fb4b04ec4814174580dc25473fc3ef9, type: 3}
 --- !u!114 &114225231529784716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -834,6 +836,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
+--- !u!114 &114878907036495162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363885141926106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddca7aec9b17f854b8b985464fd7a027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay: {fileID: 8300000, guid: d27f408aa9d07da489018a296bfe8f47, type: 3}
+  yVelocityThreshold: 0.5
 --- !u!114 &114910229284810838
 MonoBehaviour:
   m_ObjectHideFlags: 1

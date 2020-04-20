@@ -5774,6 +5774,7 @@ GameObject:
   - component: {fileID: 172664653}
   - component: {fileID: 172664655}
   - component: {fileID: 172664654}
+  - component: {fileID: 172664656}
   m_Layer: 0
   m_Name: Firework_Placeholder (1)
   m_TagString: Untagged
@@ -10445,6 +10446,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &172664656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 172664652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a481b8d6f637949aad4f13f2a6c38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireworksSound: {fileID: 8300000, guid: a6140872dc3a76742b4f9ccfdf3a506d, type: 3}
 --- !u!1001 &173031001
 Prefab:
   m_ObjectHideFlags: 0
@@ -19031,6 +19044,7 @@ GameObject:
   - component: {fileID: 700939088}
   - component: {fileID: 700939090}
   - component: {fileID: 700939089}
+  - component: {fileID: 700939091}
   m_Layer: 0
   m_Name: Firework_Placeholder (2)
   m_TagString: Untagged
@@ -23702,6 +23716,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &700939091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 700939087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a481b8d6f637949aad4f13f2a6c38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireworksSound: {fileID: 8300000, guid: a6140872dc3a76742b4f9ccfdf3a506d, type: 3}
 --- !u!1001 &718037614
 Prefab:
   m_ObjectHideFlags: 0

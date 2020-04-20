@@ -15,6 +15,8 @@ public class BobController : MonoBehaviour {
 
 	public GameObject bobModel;
 
+	public AudioClip jumpSound;
+
 	private BobStates state;
 	private BobStates lastState;
 	private Rigidbody myRigidBody;
@@ -106,6 +108,7 @@ public class BobController : MonoBehaviour {
 				// Set Jumping Variables
 				isJumping = true;
 				jumpStartY = transform.position.y;
+				AudioSource.PlayClipAtPoint (jumpSound, transform.position);
 			} else {
 				isJumping = false;
 

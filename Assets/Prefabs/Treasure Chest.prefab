@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 4059643234364404}
   - component: {fileID: 198619035482687704}
   - component: {fileID: 199045509787061410}
+  - component: {fileID: 114197101330492024}
   m_Layer: 0
   m_Name: Firework_Placeholder
   m_TagString: Untagged
@@ -288,6 +289,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114197101330492024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664769860220690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a481b8d6f637949aad4f13f2a6c38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireworksSound: {fileID: 8300000, guid: a6140872dc3a76742b4f9ccfdf3a506d, type: 3}
 --- !u!198 &198619035482687704
 ParticleSystem:
   m_ObjectHideFlags: 1
